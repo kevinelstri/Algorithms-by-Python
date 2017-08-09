@@ -17,19 +17,19 @@ from stack_list_order import Stack
 def Postfix(infix_string):
     s = Stack()
     # post = ''
-    op = '+-*/()'
-    op_dict = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 3, ')': 4}
+    op = '+-*/()^'
+    op_dict = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3, '(': 4, ')': 5}
     op_list = []
     for p in infix_string:
         if p not in op:
             op_list.append(p)
         elif s.peek() == None:
             s.push(p)
-        elif op_dict[s.peek()] != 3 and op_dict[s.peek()] >= op_dict[p]:
+        elif op_dict[s.peek()] != 4 and op_dict[s.peek()] >= op_dict[p]:
             op_list.append(s.pop())
             s.push(p)
-        elif op_dict[p] == 4:
-            while op_dict[s.peek()] != 3:
+        elif op_dict[p] == 5:
+            while op_dict[s.peek()] != 4:
                 op_list.append(s.pop())
             else:
                 s.pop()
@@ -40,5 +40,5 @@ def Postfix(infix_string):
     return op_list
 
 
-infix_string = '(a+(b*c+7))*c*d'
+infix_string = '5*3^(4-2)'
 print Postfix(infix_string)
