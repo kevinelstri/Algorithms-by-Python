@@ -1,0 +1,15 @@
+﻿# coding:utf-8
+
+
+# 斐波那契数列：fibonacci
+def fibonacci(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+
+for i in range(20):
+    print fibonacci(i),
+print '...'
