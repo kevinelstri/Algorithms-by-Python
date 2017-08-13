@@ -6,7 +6,7 @@ def BinSearch(string_list, item):
     first = 0
     last = len(string_list) - 1
     result = False
-    while first <= last:
+    while first <= last and not result:
         mid = (first + last) / 2
         if string_list[mid] == item:
             result = True
@@ -18,5 +18,5 @@ def BinSearch(string_list, item):
 
 
 string_list = [1, 2, 4, 5, 6, 7, 8, 9, 10]
-item = 5
+item = 4
 print BinSearch(string_list, item)
