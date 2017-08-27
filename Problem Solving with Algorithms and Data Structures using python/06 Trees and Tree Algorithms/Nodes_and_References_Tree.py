@@ -52,11 +52,9 @@ print r
 x = BinaryTree('a')
 x.insert_left('b')
 x.insert_right('c')
-y = BinaryTree(x.get_left_child())
-y.insert_right('d')
-z = BinaryTree(x.get_right_child())
-z.insert_right('f')
-z.insert_left('e')
+x.get_left_child().insert_right('d')
+x.get_right_child().insert_right('f')
+x.get_right_child().insert_left('e')
 print x
 
 
