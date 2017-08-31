@@ -30,34 +30,34 @@ def binary_tree(r):
 def insert_left(root, new_branch):
     t = root.pop(1)
     if len(t) > 1:
-        root.insert(1, [new_branch, t, []])
+        root.insert(1, [new_branch, t, []])  # 在左子树的基础上插入
     else:
-        root.insert(1, [new_branch, [], []])
+        root.insert(1, [new_branch, [], []])  # 直接从根节点插入
     return root
 
 
 def insert_right(root, new_branch):
     t = root.pop(2)
     if len(t) > 1:
-        root.insert(2, [new_branch, [], t])
+        root.insert(2, [new_branch, [], t])  # 在右子树的基础上插入
     else:
-        root.insert(2, [new_branch, [], []])
+        root.insert(2, [new_branch, [], []])  # 直接从根节点插入
     return root
 
 
-def get_root_val(root):
+def get_root_val(root):  # 获取根节点的值
     return root[0]
 
 
-def set_root_val(root, new_val):
+def set_root_val(root, new_val):  # 设置根节点的值
     root[0] = new_val
 
 
-def get_left_child(root):
+def get_left_child(root):  # 返回左孩子
     return root[1]
 
 
-def get_right_child(root):
+def get_right_child(root):  # 返回右孩子
     return root[2]
 
 
